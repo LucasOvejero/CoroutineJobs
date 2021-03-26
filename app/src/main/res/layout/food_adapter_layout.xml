@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="foodBinding"
+            type="com.example.myapplication.search.model.FoodDTO" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <ImageView
+                android:id="@+id/ivFood"
+                setImage="@{foodBinding.imageUrl}"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="@{foodBinding.name}"
+                app:layout_constraintStart_toEndOf="@id/ivFood"
+                app:layout_constraintTop_toTopOf="@id/ivFood"
+                tool:text="Food name" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="@{foodBinding.category}"
+                app:layout_constraintStart_toEndOf="@id/tvName"
+                app:layout_constraintTop_toTopOf="@id/tvName"
+                tool:text="Category" />
+
+            <TextView
+                android:id="@+id/tvArea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@{foodBinding.area}"
+                app:layout_constraintStart_toStartOf="@id/tvName"
+                app:layout_constraintTop_toBottomOf="@id/tvName"
+                tool:text="Area" />
+
+            <TextView
+                android:id="@+id/tvTags"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="@{foodBinding.tags}"
+                app:layout_constraintStart_toEndOf="@id/tvArea"
+                app:layout_constraintTop_toTopOf="@id/tvArea"
+                tool:text="Tags" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
